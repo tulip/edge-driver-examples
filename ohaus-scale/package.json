@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "tsc --noEmit && node build.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@extism/js-pdk": "^1.1.1",
+    "@tulip/edge-driver-sdk": "0.1.0-dev.1",
+    "@types/lodash": "^4.17.16",
+    "ajv": "^8.17.1",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.3"
+  }
+}

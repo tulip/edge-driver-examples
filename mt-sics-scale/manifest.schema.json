@@ -1,0 +1,135 @@
+{
+  "type": "object",
+  "description": "Configuration for a Tulip edge driver.",
+  "properties": {
+    "driverName": {
+      "type": "string",
+      "description": "Name of the driver."
+    },
+    "start": {
+      "type": "string",
+      "enum": ["immediate", "onAttach"],
+      "description": "Specifies when the driver should start. Options: 'immediate' (start when Player starts) or 'onAttach' (wait for a appropriate plug event before starting)."
+    },
+    "enabledHalServices": {
+      "type": "array",
+      "description": "List of services needed by the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["serial", "hid", "modbus"],
+            "description": "Name of the service."
+          },
+          "version": {
+            "type": "string",
+            "description": "Version of the service required.",
+            "examples": ["1.0.0"]
+          }
+        },
+        "required": ["name", "version"]
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Device events fired by the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the event."
+          },
+          "schema": {
+            "type": "object",
+            "description": "Schema defining the event payload.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["string", "integer", "float", "boolean", "object", "list"],
+                "description": "Data type of the event payload."
+              }
+            }
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "functions": {
+      "type": "array",
+      "description": "Functions provided by the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Function name."
+          },
+          "inputSchema": {
+            "type": "object",
+            "description": "Schema for the function's input value.",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Input value name."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["object", "string", "integer", "float", "boolean", "list"],
+                "description": "Input value type."
+              }
+            },
+            "required": ["type"]
+          },
+          "outputSchema": {
+            "type": "object",
+            "description": "Schema for the function's output value.",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Output value name."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["object", "string", "integer", "float", "boolean", "list"],
+                "description": "Output value data type."
+              }
+            },
+            "required": ["type"]
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "plugEvents": {
+      "type": "array",
+      "description": "Plug events that should be routed to the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["vidPid"],
+            "description": "Type of the plug event."
+          },
+          "vid": {
+            "type": "number",
+            "description": "USB Vendor ID."
+          },
+          "pid": {
+            "type": "number",
+            "description": "USB Product ID."
+          },
+          "interface": {
+            "type": "string",
+            "enum": ["commport", "hid", "stdin", "usb"],
+            "description": "Device interface type."
+          }
+        },
+        "required": ["type", "vid", "pid", "interface"]
+      }
+    }
+  },
+  "required": ["driverName", "start"]
+}

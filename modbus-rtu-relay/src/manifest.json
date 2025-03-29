@@ -1,0 +1,133 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "modbusRtuRelay",
+  "start": "immediate",
+  "enabledHalServices": [
+    {
+      "name": "modbus",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [
+    {
+      "name": "Driver Started"
+    },
+    {
+      "name": "Message",
+      "schema": { "type": "string" }
+    }
+  ],
+  "functions": [
+    {
+      "name": "Read Coils",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "integer"
+          },
+          "n": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "resultAsNumber": {
+            "type": "integer"
+          },
+          "resultAsBoolArray": {
+            "type": "list",
+            "elementType": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Read Discrete Inputs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "integer"
+          },
+          "n": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "list",
+            "elementType": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Write Single Coil",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Write Multiple Coils",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "integer"
+          },
+          "values": {
+            "type": "list",
+            "elementType": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Register RTU",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "baudRate": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  ],
+  "plugEvents": []
+}

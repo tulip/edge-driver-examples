@@ -1,0 +1,137 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "mt-sics-scale",
+  "start": "immediate",
+  "enabledHalServices": [
+    {
+      "name": "serial",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [
+    {
+      "name": "currentWeight",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "weight": { "type": "float" },
+          "unit": { "type": "string" },
+          "stable": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "tareValue",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "weight": { "type": "float" },
+          "unit": { "type": "string" },
+          "stable": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "zeroImmediateValue",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "weight": { "type": "float" },
+          "unit": { "type": "string" },
+          "stable": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "tareSuccess",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "tareImmediateSuccess",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "zeroSuccess",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "zeroImmediateSuccess",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "cancelSuccess",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "weightError",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string" }
+        }
+      }
+    },
+    {
+      "name": "genericEvent",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string" }
+        }
+      }
+    }
+  ],
+  "functions": [
+    {
+      "name": "open",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "port": { "type": "string" },
+          "baudRate": { "type": "integer" }
+        }
+      }
+    },
+    {
+      "name": "sendCommand",
+      "inputSchema": {
+        "name": "command",
+        "type": "string"
+      }
+    },
+    { "name": "monitorWeight" },
+    { "name": "cancel" },
+    { "name": "getWeight" },
+    { "name": "getWeightImmediate" },
+    { "name": "tare" },
+    { "name": "tareImmediate" },
+    { "name": "zero" },
+    { "name": "zeroImmediate" },
+    { "name": "list" }
+  ]
+}

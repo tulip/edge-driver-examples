@@ -1,0 +1,1107 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "banner-ptl",
+  "start": "immediate",
+  "enabledHalServices": [
+    {
+      "name": "modbus",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [],
+  "functions": [
+    {
+      "name": "WriteMode",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "ColorAnimation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "Color1Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "Color1Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "Color2Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "Color2Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "EnableStates",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "ChangeState",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobColorAnimation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobColor1Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobColor1Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobColor2Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobColor2Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingColorAnimation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingColor1Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingColor1Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingColor2Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingColor2Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickColorAnimation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickColor1Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickColor1Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickColor2Color",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickColor2Intensity",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intensity": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingAnimationSpeed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingAnimationPattern",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingAnimationDirection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingVisualOnDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "WaitingVisualOffDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobAnimationSpeed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobAnimationPattern",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobAnimationDirection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobVisualOnDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "JobVisualOffDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "AckAnimationSpeed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "AckAnimationPattern",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "AckAnimationDirection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "AckVisualOnDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "AckVisualOffDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "SevenSegMode",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickAnimationSpeed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickAnimationPattern",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickAnimationDirection",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickVisualOnDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "MispickVisualOffDelay",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delay": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "SevenSegWriteValue",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "SevenSegDecimal1",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "SevenSegDecimal2",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "SevSegDecimal3",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "ReIdDevice",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "newId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "Result": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "RegisterRTU",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "baudRate": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  ],
+  "plugEvents": []
+}

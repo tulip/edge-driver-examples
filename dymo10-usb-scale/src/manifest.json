@@ -1,0 +1,58 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "dymoM10USBScale",
+  "start": "onAttach",
+  "enabledHalServices": [
+    {
+      "name": "hid",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [
+    {
+      "name": "opened",
+      "schema": {
+        "type": "boolean"
+      }
+    },
+    {
+      "name": "error",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "measurement",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "grams": {
+            "type": "integer"
+          },
+          "ounces": {
+            "type": "float"
+          },
+          "stable": {
+            "type": "boolean"
+          },
+          "overloaded": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  ],
+  "plugEvents": [
+    {
+      "type": "vidPid",
+      "vid": 2338,
+      "pid": 32771,
+      "interface": "hid"
+    }
+  ]
+}

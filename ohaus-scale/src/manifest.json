@@ -1,0 +1,55 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "Ohaus-Scout",
+  "start": "immediate",
+  "enabledHalServices": [
+    {
+      "name": "serial",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [
+    {
+      "name": "weight",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "grams": {"type": "float"},
+          "oz": {"type": "float"},
+          "overloaded": {"type": "boolean"}
+        }
+      }
+    },
+    {
+      "name": "pieces",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "pieces": {"type": "integer"},
+          "overloaded": {"type": "boolean"}
+        }
+      }
+    }
+  ],
+  "functions": [],
+  "plugEvents": [
+    {
+      "type": "vidPid",
+      "vid": 1027,
+      "pid": 24597,
+      "interface": "commport"
+    },
+    {
+      "type": "vidPid",
+      "vid": 3768,
+      "pid": 13058,
+      "interface": "commport"
+    },
+    {
+      "type": "vidPid",
+      "vid": 1659,
+      "pid": 9123,
+      "interface": "commport"
+    }
+  ]
+}

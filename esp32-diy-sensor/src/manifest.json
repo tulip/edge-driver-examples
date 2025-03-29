@@ -1,0 +1,25 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "esp32-diy-sensor",
+  "start": "immediate",
+  "enabledHalServices": [
+    {
+      "name": "serial",
+      "version": "1.0.0"
+    }
+  ],
+  "events": [
+    {
+      "name": "data",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "temperature": { "type": "float" },
+          "humidity": { "type": "float" }
+        }
+      }
+    }
+  ],
+  "functions": [],
+  "plugEvents": []
+}

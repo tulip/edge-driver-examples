@@ -1,0 +1,31 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "counter",
+  "start": "immediate",
+  "enabledHalServices": [],
+  "events": [
+    {
+      "name": "Driver Started",
+      "schema": { "type": "string" }
+    }
+  ],
+  "functions": [
+    {
+      "name": "Hello",
+      "inputSchema": { "name": "Person", "type": "string" },
+      "outputSchema": { "name": "Greeting", "type": "string" }
+    },
+    {
+      "name": "Increment",
+      "outputSchema": { "name": "Count", "type": "integer" }
+    },
+    {
+      "name": "Decrement",
+      "outputSchema": { "name": "Count", "type": "integer" }
+    },
+    {
+      "name": "Reset"
+    }
+  ],
+  "plugEvents": []
+}
