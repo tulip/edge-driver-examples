@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "description": "Configuration for a Tulip edge driver.",
+  "properties": {
+    "driverName": {
+      "type": "string",
+      "description": "Name of the driver."
+    },
+    "start": {
+      "type": "string",
+      "enum": ["immediate", "onAttach"],
+      "description": "Specifies when the driver should start. Options: 'immediate' (start when Player starts) or 'onAttach' (wait for a appropriate plug event before starting)."
+    },
+    "enabledServices": {
+      "type": "array",
+      "description": "List of services needed by the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": ["serial", "hid", "modbus", "openprotocol"],
+            "description": "Name of the service."
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "events": {
+      "type": "object",
+      "description": "Device events fired by the driver.",
+      "additionalProperties": {
+        "type": "object",
+        "description": "Schema defining the event payload object.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["object"],
+            "description": "Data type of the event payload."
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    "functions": {
+      "type": "object",
+      "description": "Functions provided by the driver.",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "inputs": {
+            "type": "array",
+            "description": "Schema for the function's input values.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Input value name."
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "object",
+                    "string",
+                    "integer",
+                    "float",
+                    "boolean",
+                    "list"
+                  ],
+                  "description": "Input value type."
+                }
+              },
+              "required": ["name", "type"]
+            }
+          },
+          "output": {
+            "type": "object",
+            "description": "Schema for the function's output value.",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Output value name."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "object",
+                  "string",
+                  "integer",
+                  "float",
+                  "boolean",
+                  "list"
+                ],
+                "description": "Output value data type."
+              }
+            },
+            "required": ["name", "type"]
+          }
+        }
+      }
+    },
+    "plugEvents": {
+      "type": "array",
+      "description": "Plug events that should be routed to the driver.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["vidPid"],
+            "description": "Type of the plug event."
+          },
+          "vid": {
+            "type": "number",
+            "description": "USB Vendor ID."
+          },
+          "pid": {
+            "type": "number",
+            "description": "USB Product ID."
+          },
+          "interface": {
+            "type": "string",
+            "enum": ["commport", "hid", "stdin", "usb"],
+            "description": "Device interface type."
+          }
+        },
+        "required": ["type", "vid", "pid", "interface"]
+      }
+    }
+  },
+  "required": ["driverName", "start"]
+}
