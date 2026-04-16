@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "target": "ES2020",
+    "allowJs": true,
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "lib": [], // This is empty so that the IDE/tsc doesn't allow using any built-in types
+    "types": ["@extism/js-pdk", "@tulip/edge-driver-sdk"] // Add back in the built-in types we do allow
+  },
+  "include": ["**/*.ts", "**/*.d.ts"]
+}

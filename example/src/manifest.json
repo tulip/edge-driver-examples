@@ -1,0 +1,84 @@
+{
+  "$schema": "../manifest.schema.json",
+  "driverName": "example",
+  "start": "immediate",
+  "enabledServices": [],
+  "events": {
+    "integerEvent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "integer" }
+      }
+    },
+    "floatEvent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "float" }
+      }
+    },
+    "stringEvent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "booleanEvent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "boolean" }
+      }
+    },
+    "objectEvent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "object" }
+      }
+    }
+  },
+  "functions": {
+    "functionWithNoOutputValue": {
+      "inputs": [{ "name": "stringInput", "type": "string" }]
+    },
+    "functionWithStringOutputValue": {
+      "inputs": [{ "name": "stringInput", "type": "string" }],
+      "output": { "name": "stringOutput", "type": "string" }
+    },
+    "functionWithIntegerOutputValue": {
+      "inputs": [{ "name": "integerInput", "type": "integer" }],
+      "output": { "name": "integerOutput", "type": "integer" }
+    },
+    "functionWithFloatOutputValue": {
+      "inputs": [{ "name": "floatInput", "type": "float" }],
+      "output": { "name": "floatOutput", "type": "float" }
+    },
+    "functionWithBooleanOutputValue": {
+      "inputs": [{ "name": "booleanInput", "type": "boolean" }],
+      "output": { "name": "booleanOutput", "type": "boolean" }
+    },
+    "functionWithObjectOutputValue": {
+      "inputs": [{ "name": "stringInput", "type": "string" }],
+      "output": { "name": "objectOutput", "type": "object" }
+    },
+    "functionWith2IntegerInputs": {
+      "inputs": [
+        { "name": "input1", "type": "integer" },
+        { "name": "input2", "type": "integer" }
+      ],
+      "output": { "name": "output", "type": "integer" }
+    },
+    "functionWith3IntegerInputs": {
+      "inputs": [
+        { "name": "input1", "type": "integer" },
+        { "name": "input2", "type": "integer" },
+        { "name": "input3", "type": "integer" }
+      ],
+      "output": { "name": "output", "type": "integer" }
+    }
+  },
+  "plugEvents": []
+}
